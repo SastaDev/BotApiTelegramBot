@@ -1,5 +1,5 @@
 # How to install?
-```sh
+```console
 pip install -r requirements.txt
 nano config.json
 python3 -m TgBot
