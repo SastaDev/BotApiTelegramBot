@@ -6,6 +6,9 @@ import re
 
 @bot.on_update(filters.command('unban'))
 def on_unban(message):
+    if not message.is_group:
+        message.reply('Use this in groups only.')
+        return
     user = message.from_user
     chat = message.chat
     user_to_unban = helpers.getID(message)
@@ -14,6 +17,10 @@ def on_unban(message):
         return
     elif user_to_unban is False:
         message.reply('I could not able to find this user...')
+        return
+    if user.id == 1087968824: # @GroupAnonymousBot's ID.
+        btns = [Button.inline('Tap me to verify yourself!', 'anonymous_verification_unban_{}'.format(user_to_unban))]
+        message.reply('<b>Seems like an Anonymous Admin is trying to do this.</b>\n<i>Click the button given below to verify yourself before Continuing...</i>', buttons=btns)
         return
     user_to_unban = bot.get_chat(user_to_unban)
     perms = bot.get_permissions(chat, user)
