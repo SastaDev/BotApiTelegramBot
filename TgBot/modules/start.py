@@ -2,7 +2,7 @@ from TgBot import bot, db
 from BotApiTelegram.types import Button
 from BotApiTelegram import filters
 
-@bot.on_update(filters.command('start'))
+@bot.on_update(filters.regex('^/start$'))
 def on_start(message):
     text = '''
 Hello, I'm a bot which was created by using @BotApiTelegram python library.
