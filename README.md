@@ -1,5 +1,5 @@
 # How to install?
-```bash
+```zsh
 pip install -r requirements.txt
 nano config.json
 python -m TgBot
