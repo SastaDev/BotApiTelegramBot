@@ -1,5 +1,5 @@
 # How to install?
-```{r, engine='python', count_lines}
+```python
 pip install -r requirements.txt
 nano config.json
 python -m TgBot
